@@ -1,6 +1,16 @@
 name: 02- workflow Events
 
-on: push
+#fonctionne aussi comme cela pour les events
+# on: 
+#     - push
+#     - pull_request
+
+on:
+    push:
+    pull_request:
+    schedule:
+        - cron: '*/5 * * * *'
+    workflow_dispatch: #permet de lancer le workflow depuis l'UI
 
 jobs:
     echo:
