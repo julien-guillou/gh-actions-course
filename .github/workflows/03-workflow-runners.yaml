@@ -16,5 +16,13 @@ jobs:
             - name: Show OS
               shell: bash #on doit le spécifier pour windows
               run : |
-                    echo "This job is running on an Ubuntu runner."
+                    echo "This job is running on an Windows runner."
+                    echo "Runner OS: $RUNNER_OS"
+    Mac-echo:
+        runs-on: macos-latest
+        steps:
+            - name: Show OS
+              shell: bash #on doit le spécifier pour windows
+              run : |
+                    echo "This job is running on an MacOs runner."
                     echo "Runner OS: $RUNNER_OS"
