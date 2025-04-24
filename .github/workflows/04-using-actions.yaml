@@ -5,6 +5,9 @@ on: push
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: 04-Using-Actions/react-app #permet par défaut d'exécuter les run dans le répertoire
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
@@ -14,9 +17,8 @@ jobs:
                 node-version: '20.x'
             - name: Install dependencies
               run: npm ci
-              working-directory: 04-Using-Actions/react-app
-            - name: Printing Folders
-              run: ls
+            - name: Run unit Tests
+              run: npm run test
               
 
 
